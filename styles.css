@@ -11,12 +11,24 @@
   background-color: var(--cb_yellow);
 }
 
+.keyboard-row button.yellow {
+  background-color: var(--cb_yellow);
+}
+
 .green {
+  background-color: var(--cb_green);
+}
+
+.keyboard-row button.green {
   background-color: var(--cb_green);
 }
 
 .gray {
   background-color: var(--cb_gray);
+}
+
+.keyboard-row button.gray {
+  background-color: var(--cb_dark_gray);
 }
 
 body {
@@ -32,18 +44,20 @@ body {
 }
   
 .container {
-  max-width: 500px;
+  max-width: 550px;
+  width: 100%;
   margin: 0 auto;
   flex-grow: 1; /* Allow the container to grow and fill the remaining vertical space */
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
+
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
   background-color: var(--cb_dark_gray);
   padding-left: 3vw;
   padding-right: 3vw;
