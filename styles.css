@@ -166,7 +166,10 @@ div.blinking {
 }
 
 @media only screen and (max-width: 768px) {
-  .footer {
-    height: 10%;
+  .container {
+    height: 90%;
   }
+  /* .footer {
+    height: 10%;
+  } */
 }
