@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Dictionary of words
-  const wordList = ['a', 'yo', 'dog', 'baby', 'guilt', 'freely', 'ability'];
+  const wordList = ['a', 'yo', 'dog', 'baby', 'guilt', 'freely', 'ability', 'word', 'shoe', 'the', 'happyf'];
 
   // Game state variables
   let correctWord;
@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle user input
   function handleKeyInput(key) {
-    console.log(key);
     if (gameOver) {
       return;
     }
@@ -125,29 +124,37 @@ document.addEventListener("DOMContentLoaded", () => {
       let color;
       if (letter === wordLetters[i]) {
         color = "green";
-        // result.push({ letter, color: 'green' });
         wordLetters[i] = null;
       } else if (wordLetters.includes(letter)) {
         color = "yellow";
-        // result.push({ letter, color: 'yellow' });
         wordLetters[wordLetters.indexOf(letter)] = null;
       } else {
         color = "gray";
-        // result.push({ letter, color: 'gray' });
       }
-      result.push({letter, color});
+      result.push({ letter, color });
       let key = keys.find(key => key.dataset.key === letter);
       key.classList.add(color);
+      tryAddColorToKey(key, color);
     });
     return result;
   }
 
+  function tryAddColorToKey(key, color) {
+    if (Array.from(key.classList).includes("green")) {
+      return;
+    }
+    if (Array.from(key.classList).includes("yellow") && color == "green") {
+      key.classList.remove("yellow");
+      return key.classList.add(color);
+    }
+    if (Array.from(key.classList).includes("gray")) {
+      return;
+    }
+    key.classList.add(color);
+  }
+
   // Check if the game is won
   function isGameWon(guess, correctWord) {
-    guess.every((letter, i) => {
-      console.log("letter", letter);
-      console.log("i", i);
-    });
     return guess.length === correctWord.length && guess.every((letter, i) => letter.letter === correctWord[i]);
   }
 
