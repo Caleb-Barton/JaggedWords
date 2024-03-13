@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Dictionary of words
-  const wordList = ['a', 'yo', 'dog', 'baby', 'guilt', 'freely', 'ability', 'word', 'shoe', 'the', 'happyf'];
+  const wordList = ['a', 'yo', 'dog', 'baby', 'guilt', 'freely', 'ability', 'word', 'shoe', 'the', 'happy', 'toggle', 'beast', 'shame', 'sad', 'rope', 'clean', 'be', 'good', 'please', 'and', 'carpet'];
 
   // Game state variables
   let correctWord;
