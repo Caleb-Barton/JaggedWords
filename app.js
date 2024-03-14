@@ -120,20 +120,32 @@ document.addEventListener("DOMContentLoaded", () => {
   function evaluateGuess(guess, correctWord) {
     const result = [];
     const wordLetters = correctWord.split('');
+
+    // green check
     guess.split('').forEach((letter, i) => {
-      let color;
+      let color = undefined;
       if (letter === wordLetters[i]) {
         color = "green";
         wordLetters[i] = null;
+      }
+      result.push({ letter, color });
+    });
+
+    // other check
+    guess.split('').forEach((letter, i) => {
+      let color;
+      if (result[i].color === "green") {
+        color = "green";
       } else if (wordLetters.includes(letter)) {
         color = "yellow";
         wordLetters[wordLetters.indexOf(letter)] = null;
       } else {
         color = "gray";
       }
-      result.push({ letter, color });
+      if (result[i].color === undefined) {
+        result[i].color = color;
+      }
       let key = keys.find(key => key.dataset.key === letter);
-      key.classList.add(color);
       tryAddColorToKey(key, color);
     });
     return result;
@@ -143,11 +155,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (Array.from(key.classList).includes("green")) {
       return;
     }
-    if (Array.from(key.classList).includes("yellow") && color == "green") {
-      key.classList.remove("yellow");
-      return key.classList.add(color);
+    if (Array.from(key.classList).includes("yellow")) {
+      if (color == "green") {
+        key.classList.remove("yellow");
+        key.classList.add(color);
+      }
+      return;
     }
     if (Array.from(key.classList).includes("gray")) {
+      key.classList.remove("gray");
+      key.classList.add(color);
       return;
     }
     key.classList.add(color);
