@@ -5,6 +5,7 @@
   --cb_dark_gray: #353535;
   --cb_gray: #646464;
   --cb_text_shadow: 0.25vh 0.25vh .5vh var(--cb_black);
+  --cb_box_shadow: 0.25vh 0.25vh 2vh #0004;
 }
 
 .yellow {
@@ -36,6 +37,7 @@ body {
   "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     background-color: var(--cb_black);
     color: white;
+    text-shadow: var(--cb_text_shadow);
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -61,6 +63,7 @@ header {
   background-color: var(--cb_dark_gray);
   padding-left: 20px;
   padding-right: 20px;
+  box-shadow: var(--cb_box_shadow);
 }
 
 .board {
@@ -96,6 +99,7 @@ header {
   font-size: 200%;
   text-shadow: var(--cb_text_shadow);
   font-weight: bold;
+  box-shadow: var(--cb_box_shadow);
 }
 
 .footer {
@@ -120,13 +124,12 @@ button {
   font-weight: bold;
   font-size:2.5vh;
   background-color: var(--cb_gray);
-  box-shadow: inset 0px -5px 0px transparent;
   text-shadow: var(--cb_text_shadow);
   color: #FFF;
   border: none;
-  padding: 10px;
   font-size: 16px;
   cursor: pointer;
+  box-shadow: var(--cb_box_shadow);
 }
 
 .keyboard-row {
@@ -153,7 +156,7 @@ button {
   margin-left: 0.35vh;
   user-select: none;
   text-shadow: var(--cb_text_shadow);
-  box-shadow: inset 0px -5px 0px transparent;
+  box-shadow: var(--cb_box_shadow);
 }
 
 #enter {
