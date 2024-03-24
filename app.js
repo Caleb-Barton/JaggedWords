@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to resize the game container based on the viewport height
 function resizeGameContainer() {
   const viewportHeight = window.innerHeight;
-  const container = document.querySelector('.container');
+  const container = document.querySelector('.body');
   container.style.height = `${viewportHeight}px`;
 }
 

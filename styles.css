@@ -92,7 +92,7 @@ header {
 
 .tile {
   width: 90%;
-  color:yellow;
+  color:blue;
   aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
