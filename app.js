@@ -18,6 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // const enterButton = document.querySelector('.enter-btn');
   // const backspaceButton = document.querySelector('.backspace-btn');
 
+  // Function to resize the game container based on the viewport height
+function resizeGameContainer() {
+  const viewportHeight = window.innerHeight;
+  const container = document.querySelector('.container');
+  container.style.height = `${viewportHeight}px`;
+}
+
+// Call the resizeGameContainer function on page load and window resize
+window.addEventListener('load', resizeGameContainer);
+window.addEventListener('resize', resizeGameContainer);
+
 
   for (let i = 0; i < keys.length; i++) {
     keys[i].onclick = ({ target }) => {
